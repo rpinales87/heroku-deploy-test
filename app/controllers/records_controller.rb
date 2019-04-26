@@ -46,6 +46,6 @@ class RecordsController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def record_params
-      params.require(:record).permit(:artist, :title, :genre, :year)
+      params.require(:record).permit(:artist, :title, :genre, :year, :user_id)
     end
 end

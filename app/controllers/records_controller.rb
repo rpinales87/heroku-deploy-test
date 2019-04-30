@@ -1,9 +1,9 @@
-class RecordsController < OpenReadController
+class RecordsController < ProtectedController
   before_action :set_record, only: %i[show update destroy]
 
   # GET /records
   def index
-    @records = Record.all
+    @records = current_user.records.all
 
     render json: @records
   end
